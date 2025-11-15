@@ -12,12 +12,12 @@ for col in numerical_columns:
 # Remove duplicate rows
 df = df.drop_duplicates()
 
-# Standardize categorical values (e.g., ensure consistent capitalization)
+# Standardize categorical values 
 categorical_columns = df.select_dtypes(include=['object']).columns
 for col in categorical_columns:
     df[col] = df[col].str.strip().str.lower()
 
-# Filter rows based on specific conditions (example: filter out rows with negative values in a column)
+# Filter rows based on specific conditions 
 if 'sales' in df.columns:
     df = df[df['sales'] >= 0]
 
